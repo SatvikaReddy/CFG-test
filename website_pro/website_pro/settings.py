@@ -130,3 +130,10 @@ STATICFILES_DIRS = (
 STATIC_URL='/static/'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
+
+EMAIL_HOST ='smtp.hushmail.com'
+EMAIL_PORT= 587
+EMAIL_HOST_USER ='media06@hushmail.com'
+EMAIL_HOST_PASSWORD='Satvika@123'
+EMAIL_USE_TLS= True
+EMAIL_USE_SSL= False

@@ -22,7 +22,7 @@
   <link rel="icon" type="image/png" href="{% static 'assets/img/favicon.png' %}">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-    Material Kit PRO by Creative Tim
+    Team 41
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
@@ -40,7 +40,7 @@
 
     .card .card-header-primary {
       box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.2), 0 13px 24px -11px rgb(16 12 1 / 46%);
-      background: linear-gradient(45deg, #0a000c, #b4b4af);
+      background: linear-gradient(45deg, #0a000c, #afafad);
     }
 
     .btn-info{
@@ -146,8 +146,9 @@
                 </div>
               </div>
             </form>
-            <small class="text-muted ml-2">
-                <a href="{% url 'accounts:reset_password' %}">Forgot Password</a>
+            <small class="text-muted ml-2" style="font-size: medium !important;  color: #050505 !important;">
+              Did you forget your password? 
+                <a href="{% url 'accounts:reset_password' %}"><span style="font-size: medium !important; padding: 10px !important; color: #ca2222 !important;">Click Here</span></a>
             </small>
             {% if flag == 0 %}
             <div class="alert alert-warning" role="alert"> Incorrect Username of Password! Please try again.
@@ -156,7 +157,7 @@
           </div>
         </div>
       </div>
-      <footer class="footer">
+      <footer class="footer" style=" background-color: #eee !important;">
         <div class="container">
           <nav class="float-left">
             <!-- <ul>

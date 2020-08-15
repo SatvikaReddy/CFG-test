@@ -3,15 +3,16 @@ from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from mysite2.forms import SignUpForm
+from django.core.mail import send_mail
 # from chatbot.py import greeting,response
 
 # Views
 @login_required
 def landing(request):
-    return render(request, "landing.html", {})
+    return render(request, "registration/landing.html", {})
 
 def home(request):
-    return render(request, "home.html", {})
+    return render(request, "registration/home.html", {})
 
 def register(request):
     if request.method == 'POST':
@@ -23,12 +24,9 @@ def register(request):
             email= form.cleaned_data.get('email')
             user = authenticate(username = username, password = password)
             login(request, user)
+            send_mail('Registration Successfull','Hello there this is to notify you....!','media06@hushmail.com',[email],
+                fail_silently=False)
             return redirect('landing')
     else:
         form = SignUpForm()
-    return render(request, 'register.html', {'form': form})
-
-
-
-# def index(request):
-#     return render(request, 'registration/index.html',{})
+    return render(request, 'registration/register.html', {'form': form})
